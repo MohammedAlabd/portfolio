@@ -3,19 +3,19 @@ import { Container, Grid, Typography } from '@material-ui/core'
 export default props => {
     return (
         <>
-            <Container fixed >
-                <Grid   alignItems="stretch" container >
-                    <Grid
-                        item
-                        justify="flex-start"
-                        alignItems="center"
-                        xs='6'
-                    >
-                        <div style={{margin:'220px 0px'}}>
-                            <h3>Hi All I am ...</h3>
-                            <h1>Mohammed Abdulbary</h1>
-                            <h3>I am a Junior Front-End Developer</h3>
-                        </div>
+            <Container style={{height:'100%'}} fixed >
+                <Grid
+                style={{height:'100%'}}                 
+                container
+                direction="row"
+                justify="center"
+                alignItems="center" >
+                <Grid item xs='6'>
+                    <div style={{margin:''}}>
+                        <h3>Hi All I am ...</h3>
+                        <h1>Mohammed Abdulbary</h1>
+                        <h3>I am a Junior Front-End Developer</h3>
+                    </div>
                     </Grid>
                     <Grid item xs="6">
                         <Typography>

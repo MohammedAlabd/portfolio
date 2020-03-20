@@ -3,7 +3,7 @@ import './App.css';
 import Header from "./component/Header/Header"
 import About from "./component/About/About"
 import Contact from './component/Contact/Contact';
-import { Container } from '@material-ui/core';
+import { Container, Grid, CssBaseline } from '@material-ui/core';
 class App extends React.Component{
 
   constructor(props) {
@@ -23,13 +23,23 @@ class App extends React.Component{
   
   render(){
     return (
-      <div>
+      <Grid style={{height:'100vh'}} container>
+        <CssBaseline/>
+        <Grid
+        container 
+        direction="column"
+        justify="space-between"
+        alignItems="stretch"
+         item xs={2}>
             <Header handleChange={this.handleChange} selectedTab={this.state.selectedTab} />
-          <Container>
+        </Grid>
+        <Grid item xs={10}>
             <About/>
+        </Grid>
+          {/* <Container> */}
             {/* <Contact/> */}
-          </Container>
-      </div>
+          {/* </Container> */}
+      </Grid>
     );
   }
 }
