@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid, Card, CardActions,  CardActionArea, CardMedia, Typography, CardContent, Button } from '@material-ui/core';
-
+import './style.css'
 
 export default function Projects() {
     return (
@@ -14,26 +14,30 @@ export default function Projects() {
                 <Card style={{margin:50}} >
                     <CardActionArea style={{maxWidth: 345}}>
                         <CardMedia
-                        style={{height: 140}}
-                        image="../../imgs/bg.jpg"
+                        height="140"
+                        className="mines-weeper-img"
+                        style={{
+                            height: 200,
+                            backgroundPosition:'top',
+
+                        }}
                         title="Contemplative Reptile"
                         />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                            Lizard
+                            My MinesWeeper
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
+                        It s My version of the famous Game of MinesSweeper, I mad eit using pure javascript with some CSS styling 
                         </Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
-                        Share
+                        <Button size="small" href='https://github.com/MohammedAlabd/MinesWeeper' color="primary">
+                        GitHub Page
                         </Button>
-                        <Button size="small" color="primary">
-                        Learn More
+                        <Button size="small" href='https://minesweeper-purejs.netlify.com/' color="primary">
+                        Visit Link
                         </Button>
                     </CardActions>
                 </Card>
@@ -42,26 +46,28 @@ export default function Projects() {
                 <Card style={{margin:50}} >
                         <CardActionArea style={{maxWidth: 345}}>
                             <CardMedia
-                            style={{height: 140}}
-                            image="../../imgs/bg.jpg"
+                            style={{
+                                height: 200,
+                                backgroundPosition:'top',
+                            }}
+                            className="mentors-img"
                             title="Contemplative Reptile"
                             />
                             <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
-                                Lizard
+                                Mentors and Mentees
                             </Typography>
                             <Typography variant="body2" color="textSecondary" component="p">
-                                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                                across all continents except Antarctica
+                            Small website that allows you to find a Mentor/Mentee with the time that suits you and connect with them really easy
                             </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="small" color="primary">
-                            Share
+                            <Button size="small" href='https://github.com/osamaakb/mentorship' color="primary">
+                            GitHub Page
                             </Button>
-                            <Button size="small" color="primary">
-                            Learn More
+                            <Button size="small" href='https://osamaakb.github.io/mentorship/' color="primary">
+                            Visit Link
                             </Button>
                         </CardActions>
                     </Card>
@@ -70,26 +76,28 @@ export default function Projects() {
                 <Card style={{margin:50}} >
                     <CardActionArea style={{maxWidth: 345}}>
                         <CardMedia
-                        style={{height: 140}}
-                        image="../../imgs/bg.jpg"
+                        style={{
+                            height: 200,
+                            backgroundPosition:'top',
+                        }}
+                        className="gsu-img"
                         title="Contemplative Reptile"
                         />
                         <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                            Lizard
+                            BootStrap Project
                         </Typography>
                         <Typography variant="body2" color="textSecondary" component="p">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                            across all continents except Antarctica
+                            Small Project made with bootstrap with my team of classMates from re:coded BootCamp
                         </Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
-                        Share
+                        <Button size="small" href='https://github.com/MohammedAlabd/gsu-sfk' color="primary">
+                        GitHub Page
                         </Button>
                         <Button size="small" color="primary">
-                        Learn More
+                        Visit Link
                         </Button>
                     </CardActions>
                 </Card>
