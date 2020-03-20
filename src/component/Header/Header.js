@@ -24,13 +24,20 @@ export default ({ handleChange, selectedTab}) => {
     
     const classes = useStyles();
     return (
-        <>
-        <AppBar className={classes.root} position="static">
+        
+        <AppBar style={{
+            position: 'fixed',
+            left: 0,
+            maxWidth:150,
+            top: 0,
+            bottom: 0
+          }}  
+          className={classes.root} 
+          position="static">
             <Tabs
                 orientation="vertical"
                 value={selectedTab} 
                 variant="fullWidth"
-                aria-label="simple tabs example"
                 indicatorColor="secondary"
                 onChange={handleChangeEvent} 
                 centered
@@ -42,7 +49,7 @@ export default ({ handleChange, selectedTab}) => {
             </Tabs>
         </AppBar>
         
-        </>
+        
     )
 }
 

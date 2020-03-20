@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
+import Projects from './component/Projects/Projects'
 import Header from "./component/Header/Header"
 import About from "./component/About/About"
 import Contact from './component/Contact/Contact';
-import { Container, Grid, CssBaseline } from '@material-ui/core';
+import { Grid, CssBaseline } from '@material-ui/core';
 class App extends React.Component{
 
   constructor(props) {
@@ -34,11 +35,10 @@ class App extends React.Component{
             <Header handleChange={this.handleChange} selectedTab={this.state.selectedTab} />
         </Grid>
         <Grid item xs={10}>
-            <About/>
-        </Grid>
-          {/* <Container> */}
+          <Projects/>
+            {/* <About/> */}
             {/* <Contact/> */}
-          {/* </Container> */}
+        </Grid>
       </Grid>
     );
   }

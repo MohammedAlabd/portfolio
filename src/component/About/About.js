@@ -11,15 +11,15 @@ export default props => {
                 justify="center"
                 alignItems="center" >
                 <Grid item xs='6'>
-                    <div style={{margin:''}}>
-                        <h3>Hi All I am ...</h3>
-                        <h1>Mohammed Abdulbary</h1>
-                        <h3>I am a Junior Front-End Developer</h3>
+                    <div>
+                        <Typography variant='h5'>Hi All, I am ...</Typography >
+                        <Typography variant='h3'>Mohammed Abdulbary</Typography>
+                        <Typography variant='h5'>I am a Junior Front-End Developer</Typography>
                     </div>
                     </Grid>
                     <Grid item xs="6">
                         <Typography>
-                            {/* I was learning C and C++ language at first but then started to learn about front-End and after that i joined Re:coded Front-End Bootcamp with the hope to be a junior Developer  */}
+                            I was learning C and C++ language at first but then started to learn about front-End and after that i joined Re:coded Front-End Bootcamp with the hope to be a junior Developer 
                         </Typography>
                     </Grid>
                 </Grid>

@@ -15,7 +15,7 @@ export default props => {
                         </Typography>
                     </Grid>
                 </Grid>
-                <Grid container item xs={6}  >
+                <Grid container  alignItems="center" item xs={6}  >
                     <Grid item xs={5}> 
                     <Typography  variant="subtitle1">You can reach me on:</Typography>
                     <List component="nav" aria-label="main mailbox folders">
