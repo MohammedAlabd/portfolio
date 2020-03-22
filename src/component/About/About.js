@@ -12,7 +12,7 @@ export default props => {
                 alignItems="center" >
                 <Grid item xs='6'>
                     <div>
-                        <Typography variant='h5'>Hi All, I am ...</Typography >
+                        <Typography variant='h5'>Hello, Welcome to my site, I am ...</Typography >
                         <Typography variant='h3'>Mohammed Abdulbary</Typography>
                         <Typography variant='h5'>I am a Junior Front-End Developer</Typography>
                     </div>
