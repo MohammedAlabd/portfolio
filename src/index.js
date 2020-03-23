@@ -12,11 +12,12 @@ const theme = createMuiTheme({
             light:teal[200],
             dark:teal[600]
         },
-        secondary:{
+        secondary:
+        {
             main:lime[300],
             light:lime[100],
             dark:lime[600]
-        }
+        },
     }
 })
 

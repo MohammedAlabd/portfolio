@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
+import Landing from './component/Landing/Landing'
 import Projects from './component/Projects/Projects'
-import Header from "./component/Header/Header"
+import NavBar from "./component/NavBar/NavBar"
 import About from "./component/About/About"
 import Contact from './component/Contact/Contact';
 import { Grid, CssBaseline } from '@material-ui/core';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
 } from "react-router-dom";
 
@@ -39,11 +39,14 @@ class App extends React.Component{
           alignItems="stretch"
           item xs={2}>
             <Route path="/">
-              <Header handleChange={this.handleChange} selectedTab={this.state.selectedTab} />
-            </Route>  
+              <NavBar handleChange={this.handleChange} selectedTab={this.state.selectedTab} />
+            </Route>
           </Grid>
-          <Grid item xs={10}>
-            <Route exact path='/'>
+          <Grid item xs={12} sm={10}>
+            <Route exact path="/">
+              <Landing/>
+            </Route>  
+            <Route exact path='/about'>
               <About/>
             </Route>
             <Route exact path='/Projects'>

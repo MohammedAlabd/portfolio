@@ -63,7 +63,7 @@ export default props => {
                     </Grid>
                     <Grid container item justify="center" alignItems="center">
                         <Button size='large' variant="contained" color="primary" style={{marginBottom:20}} >
-                            <Typography color='initial' > Primary </Typography> 
+                            <Typography color='initial' > Send </Typography> 
                         </Button>
                     </Grid>
                 </Grid>
