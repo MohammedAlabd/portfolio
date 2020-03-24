@@ -32,30 +32,34 @@ class App extends React.Component{
       <Router>
         <Grid style={{height:'100vh'}} container>
           <CssBaseline/>
-          <Grid
+            <Route exact path="/">
+              <Landing/>
+            </Route>
+            
+          {/* <Grid
           container 
           direction="column"
           justify="space-between"
           alignItems="stretch"
-          item xs={2}>
-            <Route path="/">
-              <NavBar handleChange={this.handleChange} selectedTab={this.state.selectedTab} />
-            </Route>
-          </Grid>
-          <Grid item xs={12} sm={10}>
-            <Route exact path="/">
-              <Landing/>
-            </Route>  
-            <Route exact path='/about'>
-              <About/>
-            </Route>
-            <Route exact path='/Projects'>
-              <Projects/>
-            </Route>
-            <Route exact path='/contact'>
-              <Contact/>
-            </Route>
-          </Grid>
+          // item xs={0} md={2} 
+          > */}
+            <Grid item xs={0} md={2}>
+              <Route path="/home">
+                <NavBar handleChange={this.handleChange} selectedTab={this.state.selectedTab} />
+              </Route>
+            </Grid>
+              <Grid item xs={12} md={10} >
+              <Route exact path='/home/about'>
+                <About/>
+              </Route>
+              <Route exact path='/home/Projects'>
+                <Projects/>
+              </Route>
+              <Route exact path='/home/contact'>
+                <Contact/>
+              </Route>
+            </Grid>
+          {/* </Grid> */}
         </Grid>
       </Router>
     );

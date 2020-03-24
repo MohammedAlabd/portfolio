@@ -1,9 +1,9 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Typography, Button } from "@material-ui/core";
 import { Controller, Scene } from "react-scrollmagic";
-import { Tween, Timeline, SplitLetters, SplitWords } from "react-gsap";
-import styled from "styled-components";
+import { Tween, SplitLetters, SplitWords } from "react-gsap";
 import {Link} from "react-router-dom"
+import styled from "styled-components";
 
 const SplitTextStyled = styled.div`
   overflow: hidden;
@@ -20,21 +20,17 @@ const SplitTextStyled = styled.div`
   .text,
   .text2 {
     position: relative;
-    font-size: 80px;
+    // font-size: 80px;
     font-weight: bold;
     display: inline-block;
-    font-size: 72px;
-    // background: rgb(220,231,117);
-    // background: linear-gradient(180deg, rgba(220,231,117,1) 0%, rgba(0,77,64,1) 83%);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
+    // font-size: 72px;
   }
 `;
 
 export default ({tag:{name,direction}, lastTag}) => {
   
   return (
-    <div style={{}}>
+    <>
       <SplitTextStyled>
         <Controller>
           <Scene
@@ -58,12 +54,16 @@ export default ({tag:{name,direction}, lastTag}) => {
                 {lastTag 
                 ? 
                 <SplitWords >
-                    <Typography  onClick={() => window.location = '/about'} color='primary' className="text">
-                      {name}
-                    </Typography>
-              </SplitWords>                   
+                      <Link to={`/home/about`} style={{textDecoration:'none'}}>
+                        <Button  style={{padding:'20px 40px',borderRadius:10}} variant="outlined" size="large" color="primary" >
+                          <Typography variant='h5'className="text">
+                            {name}
+                          </Typography>
+                        </Button>
+                      </Link>
+              </SplitWords> 
                 : <SplitLetters>
-                <Typography color='primary' className="text">
+                <Typography variant='h2'  className="text">
                   {name}
                 </Typography>
                 </SplitLetters>
@@ -72,6 +72,6 @@ export default ({tag:{name,direction}, lastTag}) => {
           </Scene>
         </Controller>
       </SplitTextStyled>
-    </div>
+    </>
   );
 };

@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core'
 import {teal, lime} from '@material-ui/core/colors'
+const theme1 = createMuiTheme()
 const theme = createMuiTheme({
     palette:{
         primary:{
@@ -18,8 +19,61 @@ const theme = createMuiTheme({
             light:lime[100],
             dark:lime[600]
         },
+    },
+    typography:{
+        h1:{
+            fontSize: '3.6rem',
+            [theme1.breakpoints.up('sm')]: {
+              fontSize: '5rem',
+            },
+            [theme1.breakpoints.up('md')]: {
+              fontSize: '6rem',
+            },
+        },
+        
+        h2:{
+            fontSize: '3rem',
+            [theme1.breakpoints.up('md')]: {
+            fontSize: '4rem',
+            },
+            [theme1.breakpoints.up('md')]: {
+            fontSize: '5rem',
+            },
+        },
+        
+        h3:{
+            fontSize: '2rem',
+            [theme1.breakpoints.up('md')]: {
+            fontSize: '2.4rem',
+            },
+            [theme1.breakpoints.up('md')]: {
+            fontSize: '3rem',
+            },
+            fontWeight:100,
+        },
     }
 })
+
+// theme.typography.h3 = {
+//     fontSize: '2rem',
+//     [theme.breakpoints.up('md')]: {
+//       fontSize: '2.4rem',
+//     },
+//     [theme.breakpoints.up('md')]: {
+//       fontSize: '3rem',
+//     },
+//   };
+
+//   theme.typography.h1 = {
+//     fontSize: '4rem',
+//     [theme.breakpoints.up('sm')]: {
+//       fontSize: '5rem',
+//     },
+//     [theme.breakpoints.up('md')]: {
+//       fontSize: '6rem',
+//     },
+//   };
+  
 
 console.log(theme);
 
