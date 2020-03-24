@@ -9,13 +9,59 @@ import {
   CardContent,
   Button
 } from "@material-ui/core";
-import "./style.css";
+import { makeStyles } from '@material-ui/core/styles';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import gsuImg from '../../img/afis-1.png'
+import mentorsImg from '../../img/mentorship.png'
+import minesImg from '../../img/mines-weeper.png'
+
+const useStyles = makeStyles(theme => ({
+    firstTypography:{
+        alignSelf: "center",
+        margin: "70px 0 0 0",
+        [theme.breakpoints.up("md")]:{
+            margin: "30px 0 0 0"
+        }
+    },
+    card:{
+        margin: 50, 
+        maxWidth: 600
+    },
+    minesWeeperImg:{
+        backgroundImage: `url('${minesImg}')`,
+        height: 200,
+        backgroundPosition: "top",
+    },
+    gsuImg:{
+        backgroundImage: `url('${gsuImg}')`,
+        height: 200,
+        backgroundPosition: "top",
+    },
+    mentorsImg:{
+        backgroundImage: `url('${mentorsImg}')`,
+        height: 200,
+        backgroundPosition: "top",
+    },
+    cardActionArea:{
+        maxWidth: 600
+    },
+    alignSelfEnd:{
+        alignSelf: "flex-end"
+    },
+    buttonText:{
+        textAlign:'center',
+        display:"content",
+        padding:0,
+        margin:0,
+    },
+
+}))
 
 AOS.init();
 
 export default function Projects() {
+    const classes = useStyles();
   return (
     <Grid
       container
@@ -24,7 +70,7 @@ export default function Projects() {
       alignItems="flex-start"
     >
       <Typography
-        style={{ alignSelf: "center", margin: "30px 0" }}
+        className={classes.firstTypography}
         variant="h2"
         align="center"
       >
@@ -35,23 +81,20 @@ export default function Projects() {
         <Card
           data-aos="fade-right"
           data-aos-duration="800"
-          style={{ margin: 50, maxWidth: 600 }}
+          className={classes.card}
         >
           <Grid container>
-            <Grid item xs={6}>
-              <CardActionArea disabled style={{ maxWidth: 600 }}>
+            <Grid item xs={12} sm={6}>
+              <CardActionArea disabled className={classes.cardActionArea}>
                 <CardMedia
                   height="140"
-                  className="mines-weeper-img"
-                  style={{
-                    height: 200,
-                    backgroundPosition: "top"
-                  }}
+                  className={classes.minesWeeperImg}
                   title="Mines Weeper"
+                  imag={minesImg}
                 />
               </CardActionArea>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   My MinesWeeper
@@ -64,31 +107,33 @@ export default function Projects() {
               <CardActions>
                 <Button
                   size="small"
+                  variant="outlined"
                   href="https://github.com/MohammedAlabd/MinesWeeper"
                   color="primary"
                 >
-                  GitHub Page
+                  <p className={classes.buttonText} > GitHub Page </p>
                 </Button>
                 <Button
                   size="small"
+                  variant="outlined"
                   href="https://minesweeper-purejs.netlify.com/"
                   color="primary"
                 >
-                  Visit Link
+                  <p className={classes.buttonText} > Visit Link </p>
                 </Button>
               </CardActions>
             </Grid>
           </Grid>
         </Card>
       </Grid>
-      <Grid item style={{ alignSelf: "flex-end" }}>
+      <Grid item className={classes.alignSelfEnd}>
         <Card
           data-aos="fade-left"
           data-aos-duration="800"
-          style={{ margin: 50, maxWidth: 600 }}
+          className={classes.card}
         >
           <Grid container>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   Mentors and Mentees
@@ -100,30 +145,27 @@ export default function Projects() {
               </CardContent>
               <CardActions>
                 <Button
-                  size="small"
+                  size="small" variant="outlined"
                   href="https://github.com/osamaakb/mentorship"
                   color="primary"
                 >
-                  GitHub Page
+                  <p className={classes.buttonText} > GitHub Page </p>
                 </Button>
                 <Button
-                  size="small"
+                  size="small" variant="outlined"
                   href="https://osamaakb.github.io/mentorship/"
                   color="primary"
                 >
-                  Visit Link
+                  <p className={classes.buttonText} > Visit Link </p>
+                  
                 </Button>
               </CardActions>
             </Grid>
-            <Grid item xs={6}>
-              <CardActionArea disabled style={{ maxWidth: 600 }}>
+            <Grid item xs={12} sm={6}>
+              <CardActionArea disabled className={classes.cardActionArea}>
                 <CardMedia
                   height="140"
-                  className="mentors-img"
-                  style={{
-                    height: 200,
-                    backgroundPosition: "top"
-                  }}
+                  className={classes.mentorsImg}
                   title="Mentors Webpage"
                 />
               </CardActionArea>
@@ -135,23 +177,18 @@ export default function Projects() {
         <Card
           data-aos="fade-right"
           data-aos-duration="800"
-          style={{ margin: 50, width: 600 }}
-        >
+          className={classes.card}        >
           <Grid container>
-            <Grid item xs={6}>
-              <CardActionArea disabled style={{ maxWidth: 600 }}>
+            <Grid item xs={12} sm={6}>
+              <CardActionArea disabled className={classes.cardActionArea}>
                 <CardMedia
                   height="140"
-                  className="gsu-img"
-                  style={{
-                    height: 200,
-                    backgroundPosition: "top"
-                  }}
+                  className={classes.gsuImg}
                   title="GSU WebPage"
                 />
               </CardActionArea>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                   GSU Webpage
@@ -163,14 +200,14 @@ export default function Projects() {
               </CardContent>
               <CardActions>
                 <Button
-                  size="small"
+                  size="small" variant="outlined"
                   href="https://github.com/MohammedAlabd/gsu-sfk"
                   color="primary"
                 >
-                  GitHub Page
+                  <p className={classes.buttonText} > GitHub Page </p>
                 </Button>
-                <Button size="small" color="primary">
-                  Visit Link
+                <Button size="small" variant="outlined" color="primary">
+                <p className={classes.buttonText} > Visit Link </p>
                 </Button>
               </CardActions>
             </Grid>
