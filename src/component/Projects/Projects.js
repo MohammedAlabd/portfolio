@@ -55,6 +55,11 @@ const useStyles = makeStyles(theme => ({
         padding:0,
         margin:0,
     },
+    flexDirectionResponsive:{
+        [theme.breakpoints.down('xs')]:{
+            flexDirection:'column-reverse'
+        }
+    },
 
 }))
 
@@ -132,7 +137,7 @@ export default function Projects() {
           data-aos-duration="800"
           className={classes.card}
         >
-          <Grid container>
+          <Grid container className={classes.flexDirectionResponsive}>
             <Grid item xs={12} sm={6}>
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
