@@ -1,75 +1,185 @@
-import React from 'react'
-import {List, ListItem, Button, TextField, ListItemIcon, ListItemText, Container, Grid, Typography } from "@material-ui/core"
-import {GitHub, LinkedIn, Facebook, Instagram} from '@material-ui/icons';
+import React from "react";
+import {
+  List,
+  ListItem,
+  Button,
+  TextField,
+  ListItemIcon,
+  ListItemText,
+  Container,
+  Grid,
+  Typography
+} from "@material-ui/core";
+import { GitHub, LinkedIn, Facebook, Instagram } from "@material-ui/icons";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles(theme => ({
+  firstTypography: {
+    alignSelf: "center",
+    margin: "70px 0 0 0",
+    [theme.breakpoints.up("md")]: {
+      margin: "30px 0 0 0"
+    }
+  },
+  button: {
+    justifyContent: "end",
+    width: 200,
+    [theme.breakpoints.down("xs")]: {
+      width: 150
+    }
+  },
+  justifyContentResponsive: {
+    justifyContent: "end",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "space-around"
+    }
+  },
+  responsiveTextAlign:{
+      [theme.breakpoints.down('sm')]:{
+          textAlign:'center'
+      }
+  },
+
+}));
 
 export default props => {
-    
-    return (
-        <Container fixed >
-            <Grid container>
-                <Grid container item xs={12} justify="center" alignItems="center">
-                    <Grid item >
-                        <Typography style={{margin:30}} align="center" variant="h2">
-                            Contact Me
-                        </Typography>
-                    </Grid>
-                </Grid>
-                <Grid container  alignItems="center" item xs={6}  >
-                    <Grid item xs={5}> 
-                    <Typography  variant="subtitle1">You can reach me on:</Typography>
-                    <List component="nav" aria-label="main mailbox folders">
-                        <ListItem button>
-                            <ListItemIcon>
-                                <GitHub color='primary' />
-                            </ListItemIcon>
-                            <Typography align="center">
-                                <ListItemText primary="GitHub" />
-                            </Typography>
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemIcon>
-                                <LinkedIn color='primary' />
-                            </ListItemIcon>
-                            <ListItemText primary="LinkedIn" />
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemIcon>
-                                <Facebook color='primary' />
-                            </ListItemIcon>
-                            <ListItemText primary="Facebook" />
-                        </ListItem>    
-                        <ListItem  button>
-                            <ListItemIcon>
-                                <Instagram color='primary' />
-                            </ListItemIcon>
-                            <ListItemText primary="Instagram" />
-                        </ListItem>
-                    </List>
-                    </Grid>
-                </Grid>
-                <Grid container item spacing={2} justify="space-between" alignItems="center" xs={6}>
-                    <Grid item xs={6}>
-                        <TextField fullWidth style={{marginBottom:10}} label="Name" variant="outlined" />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <TextField fullWidth style={{marginBottom:10}} label="Email" variant="outlined" />
-                    </Grid>
-                    <Grid container item justify="center" alignItems="center">
-                        <TextField fullWidth style={{marginBottom:10}} label="Subject" variant="outlined" />
-                    </Grid>
-                    <Grid container item justify="center" alignItems="center">
-                        <TextField multiline fullWidth style={{marginBottom:20}} rows='10' placeholder      ="Message" variant="outlined" />
-                    </Grid>
-                    <Grid container item justify="center" alignItems="center">
-                        <Button size='large' variant="contained" color="primary" style={{marginBottom:20}} >
-                            <Typography color='initial' > Send </Typography> 
-                        </Button>
-                    </Grid>
-                </Grid>
+  const classes = useStyles();
+
+  return (
+    <Container >
+      <Grid container spacing={2}>
+        <Grid container justify="center" alignItems="center">
+          <Grid item xs={12}>
+            <Typography
+              className={classes.firstTypography}
+              align="center"
+              variant="h2"
+            >
+              Contact Me
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid container alignItems="center" item xs={12} sm={6}>
+          <Grid item xs={12} sm={6}>
+            <Grid
+              container
+              className={classes.justifyContentResponsive}
+              justify="center"
+              spacing={2}
+            >
+              <Grid item xs={12}>
+                <Typography className={classes.responsiveTextAlign} variant="subtitle1">
+                  You can reach me on:
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  className={classes.button}
+                  startIcon={<GitHub color="primary" />}
+                >
+                  GitHub
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  className={classes.button}
+                  startIcon={<LinkedIn color="primary" />}
+                >
+                  Linked In
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  className={classes.button}
+                  startIcon={<Facebook color="primary" />}
+                >
+                  Facebook
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  className={classes.button}
+                  startIcon={<Instagram color="primary" />}
+                >
+                  Instagram
+                </Button>
+              </Grid>
             </Grid>
-            
-            
-        </Container>
-    )
-}
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Grid
+            container
+            spacing={2}
+            justify="space-between"
+            alignItems="center"
+          >
+            <Grid item xs={12}>
+                <Typography
+                    align="center"
+                    variant="subtitle1"
+                >
+                    You can Send me Message:
+                </Typography>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Name"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <TextField
+                fullWidth
+                label="Email"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid container item justify="center" alignItems="center">
+              <TextField
+                fullWidth
+                label="Subject"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid container item justify="center" alignItems="center">
+              <TextField
+                multiline
+                fullWidth
+                rows="10"
+                placeholder="Message"
+                variant="outlined"
+              />
+            </Grid>
+            <Grid container item justify="center" alignItems="center">
+              <Button
+                size="large"
+                variant="contained"
+                color="primary"
+              >
+                <Typography color="initial"> Send </Typography>
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};

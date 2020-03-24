@@ -66,7 +66,9 @@ const useStyles = makeStyles(theme => ({
 AOS.init();
 
 export default function Projects() {
+
     const classes = useStyles();
+    
   return (
     <Grid
       container
