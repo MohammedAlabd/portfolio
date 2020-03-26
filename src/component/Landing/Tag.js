@@ -20,11 +20,15 @@ const SplitTextStyled = styled.div`
   .text,
   .text2 {
     position: relative;
+    font-family: 'Montserrat', sans-serif;
     // font-size: 80px;
     font-weight: bold;
     display: inline-block;
     // font-size: 72px;
   }
+  .textFamily{
+    font-family: 'Montserrat', sans-serif;
+}
 `;
 
 export default ({tag:{name,direction}, lastTag}) => {
@@ -55,8 +59,8 @@ export default ({tag:{name,direction}, lastTag}) => {
                 ? 
                 <SplitWords >
                       <Link to={`/home/about`} style={{textDecoration:'none'}}>
-                        <Button  style={{padding:'20px 40px',borderRadius:10}} variant="outlined" size="large" color="primary" >
-                          <Typography variant='h5'className="text">
+                        <Button id='last' color='primary'  style={{padding:'20px 40px',borderRadius:10}} variant="outlined" size="large"  >
+                          <Typography  variant='h5'className="text">
                             {name}
                           </Typography>
                         </Button>

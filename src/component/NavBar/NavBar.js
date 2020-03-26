@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ResponsiveDrawer(props) {
-  const { container } = props;
+  const { container, handleChange, selectedTab } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -78,15 +78,19 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleChangeEvent = (index) => (e) => {
+    // console.log(index);
+    
+    handleChange(index)
+  }
+  
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Tabs
         orientation="vertical"
-        value={0}
-        variant="fullWidth"
+        value={selectedTab}
         indicatorColor="secondary"
-        // onChange={handleChangeEvent}
         centered
       >
         <Link
@@ -98,6 +102,8 @@ function ResponsiveDrawer(props) {
             variant="contained"
             color="primary"
             size="large"
+            name='0'
+            onClick={handleChangeEvent(0)}
             className={classes.button}
             startIcon={
               <AccountCircleRoundedIcon
@@ -106,7 +112,7 @@ function ResponsiveDrawer(props) {
               />
             }
           >
-            <Tab disableRipple label="About" value={0} />
+            <Tab disableRipple component='div' label="About" value={0} />
           </Button>
         </Link>
         <Link
@@ -118,6 +124,7 @@ function ResponsiveDrawer(props) {
             variant="contained"
             color="primary"
             size="large"
+            onClick={handleChangeEvent(1)}
             className={classes.button}
             startIcon={
               <AccountTreeRoundedIcon
@@ -126,7 +133,7 @@ function ResponsiveDrawer(props) {
               />
             }
           >
-            <Tab disableRipple label="Portfolio" value={1} />
+            <Tab disableRipple component='div' label="Portfolio" value={1} />
           </Button>
         </Link>
         <Link
@@ -138,12 +145,13 @@ function ResponsiveDrawer(props) {
             variant="contained"
             color="primary"
             size="large"
+            onClick={handleChangeEvent(2)}
             className={classes.button}
             startIcon={
               <PhoneOutlinedIcon className={classes.icon} color="secondary" />
             }
           >
-            <Tab disableRipple label="Contact" value={2} />
+            <Tab component='div' disableRipple label="Contact" value={2} />
           </Button>
         </Link>
         <Link
@@ -163,7 +171,7 @@ function ResponsiveDrawer(props) {
               />
             }
           >
-            <Tab disableRipple label="Resume" value={3} />
+            <Tab component='div' disableRipple label="Resume" value={3} />
           </Button>
         </Link>
       </Tabs>

@@ -22,61 +22,37 @@ const theme = createMuiTheme({
     },
     typography:{
         h1:{
-            fontSize: '3.6rem',
+            fontSize: '2rem',
             [theme1.breakpoints.up('sm')]: {
-              fontSize: '5rem',
+              fontSize: '2.4rem',
             },
             [theme1.breakpoints.up('md')]: {
-              fontSize: '6rem',
+              fontSize: '2.5rem',
             },
         },
         
         h2:{
-            fontSize: '3rem',
+            fontSize: '1.8rem',
             [theme1.breakpoints.up('md')]: {
-            fontSize: '4rem',
+            fontSize: '2rem',
             },
             [theme1.breakpoints.up('md')]: {
-            fontSize: '5rem',
+            fontSize: '2rem',
             },
         },
         
         h3:{
-            fontSize: '2rem',
+            fontSize: '1.5rem',
             [theme1.breakpoints.up('md')]: {
-            fontSize: '2.4rem',
+            fontSize: '1.8rem',
             },
             [theme1.breakpoints.up('md')]: {
-            fontSize: '3rem',
+            fontSize: '1.8rem',
             },
             fontWeight:100,
         },
     }
 })
-
-// theme.typography.h3 = {
-//     fontSize: '2rem',
-//     [theme.breakpoints.up('md')]: {
-//       fontSize: '2.4rem',
-//     },
-//     [theme.breakpoints.up('md')]: {
-//       fontSize: '3rem',
-//     },
-//   };
-
-//   theme.typography.h1 = {
-//     fontSize: '4rem',
-//     [theme.breakpoints.up('sm')]: {
-//       fontSize: '5rem',
-//     },
-//     [theme.breakpoints.up('md')]: {
-//       fontSize: '6rem',
-//     },
-//   };
-  
-
-console.log(theme);
-
 
 ReactDOM.render( <MuiThemeProvider theme={theme} > <App /> </MuiThemeProvider>, document.getElementById('root'));
 

@@ -1,17 +1,14 @@
 import React from "react";
 import {
-  List,
-  ListItem,
   Button,
   TextField,
-  ListItemIcon,
-  ListItemText,
   Container,
   Grid,
   Typography
 } from "@material-ui/core";
 import { GitHub, LinkedIn, Facebook, Instagram } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
+import StateModal from '../StateModal/StateModal'
 
 const useStyles = makeStyles(theme => ({
   firstTypography: {
@@ -42,14 +39,33 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-export default props => {
+export default ({ 
+    name, 
+    email,
+    subject,
+    message,
+    handleInputChange,
+    handleSubmit,
+    nameValidate,
+    emailValidate,
+    subjectValidate,
+    messageValidate,
+    modalMessage,
+    modalTitle,
+    modalState,
+    handleClose
+}) => {
   const classes = useStyles();
 
+  const handleChangeEvent = event => handleInputChange(event.target.value, event.target.name)
+  
   return (
+    <form  onSubmit={handleSubmit} >
     <Container >
       <Grid container spacing={2}>
         <Grid container justify="center" alignItems="center">
           <Grid item xs={12}>
+            <StateModal modalMessage={modalMessage} modalTitle={modalTitle} handleClose={handleClose} modalState={modalState} />
             <Typography
               className={classes.firstTypography}
               align="center"
@@ -74,7 +90,7 @@ export default props => {
               </Grid>
               <Grid item>
                 <Button
-                  fullWidth
+                  
                   variant="outlined"
                   color="primary"
                   size="large"
@@ -86,7 +102,6 @@ export default props => {
               </Grid>
               <Grid item>
                 <Button
-                  fullWidth
                   variant="outlined"
                   color="primary"
                   size="large"
@@ -98,7 +113,6 @@ export default props => {
               </Grid>
               <Grid item>
                 <Button
-                  fullWidth
                   variant="outlined"
                   color="primary"
                   size="large"
@@ -110,7 +124,6 @@ export default props => {
               </Grid>
               <Grid item>
                 <Button
-                  fullWidth
                   variant="outlined"
                   color="primary"
                   size="large"
@@ -138,48 +151,75 @@ export default props => {
                     You can Send me Message:
                 </Typography>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Name"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <TextField
-                fullWidth
-                label="Email"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid container item justify="center" alignItems="center">
-              <TextField
-                fullWidth
-                label="Subject"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid container item justify="center" alignItems="center">
-              <TextField
-                multiline
-                fullWidth
-                rows="10"
-                placeholder="Message"
-                variant="outlined"
-              />
-            </Grid>
-            <Grid container item justify="center" alignItems="center">
-              <Button
-                size="large"
-                variant="contained"
-                color="primary"
-              >
-                <Typography color="initial"> Send </Typography>
-              </Button>
-            </Grid>
+            {/* <form onSubmit={handleSubmit} > */}
+              <Grid item xs={12} md={6}>
+                <TextField
+                  fullWidth
+                  error={!nameValidate}
+                  required
+                  name='name'
+                  label="Name"
+                  variant="outlined"
+                  onChange={handleChangeEvent}
+                  value={name}
+                />
+              </Grid>
+              <Grid item xs={12} md={6}>
+                <TextField
+                  fullWidth
+                  error={!emailValidate}
+                  required
+                  type='email'
+                  name='email'
+                  label="Email"
+                  variant="outlined"
+                  onChange={handleChangeEvent}
+                  value={email}
+                />
+              </Grid>
+              <Grid container item justify="center" alignItems="center">
+                <TextField
+                  fullWidth
+                  error={!subjectValidate}
+                  required
+                  name='subject'
+                  label="Subject"
+                  variant="outlined"
+                  onChange={handleChangeEvent}
+                  value={subject}
+                />
+              </Grid>
+              <Grid container item justify="center" alignItems="center">
+                <TextField
+                  multiline
+                  fullWidth
+                  error={!messageValidate}
+                  required
+                  name='message'
+                  rows="10"
+                  placeholder="Message"
+                  variant="outlined"
+                  onChange={handleChangeEvent}
+                  value={message}
+                />
+              </Grid>
+              <Grid container item justify="center" alignItems="center">
+                <Button
+                  onClick={handleSubmit}
+                  type='submit'
+                  size="large"
+                  variant="contained"
+                  color="primary"
+                >
+                  <Typography color="initial"> Send </Typography>
+                </Button>
+              </Grid>
+            {/* </form> */}
           </Grid>
         </Grid>
       </Grid>
     </Container>
+    </form>
+
   );
 };
