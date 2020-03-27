@@ -10,6 +10,11 @@ import { GitHub, LinkedIn, Facebook, Instagram } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core/styles";
 import StateModal from '../StateModal/StateModal'
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
+
+
 const useStyles = makeStyles(theme => ({
   firstTypography: {
     alignSelf: "center",
@@ -36,7 +41,9 @@ const useStyles = makeStyles(theme => ({
           textAlign:'center'
       }
   },
-
+  topMargin:{
+    marginTop:16
+  },
 }));
 
 export default ({ 
@@ -61,7 +68,7 @@ export default ({
   const handleChangeEvent = event => handleInputChange(event.target.value, event.target.name)
   
   return (
-    <form  onSubmit={handleSubmit} >
+    <form  onSubmit={handleSubmit}  >
     <Container >
       <Grid container spacing={2}>
         <Grid container justify="center" alignItems="center">
@@ -71,6 +78,8 @@ export default ({
               className={classes.firstTypography}
               align="center"
               variant="h2"
+              data-aos='fade-down'
+              data-aos-duration='1000'
             >
               Contact Me
             </Typography>
@@ -84,12 +93,12 @@ export default ({
               justify="center"
               spacing={2}
             >
-              <Grid item xs={12}>
+              <Grid item xs={12} data-aos='fade-right' data-aos-duration='1000' >
                 <Typography className={classes.responsiveTextAlign} variant="subtitle1">
                   You can reach me on:
                 </Typography>
               </Grid>
-              <Grid item>
+              <Grid item data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000' >
                 <Button
                   href='https://github.com/MohammedAlabd'
                   variant="outlined"
@@ -101,7 +110,7 @@ export default ({
                   GitHub
                 </Button>
               </Grid>
-              <Grid item>
+              <Grid item data-aos='fade-right' data-aos-delay='1500' data-aos-duration='1000'>
                 <Button
                   href='https://www.linkedin.com/in/mohammed-alabd/'
                   variant="outlined"
@@ -113,7 +122,7 @@ export default ({
                   Linked In
                 </Button>
               </Grid>
-              <Grid item>
+              <Grid item data-aos='fade-right' data-aos-delay='2000' data-aos-duration='1000' >
                 <Button
                   href='https://www.facebook.com/assassin.first1'
                   variant="outlined"
@@ -125,7 +134,7 @@ export default ({
                   Facebook
                 </Button>
               </Grid>
-              <Grid item>
+              <Grid item data-aos='fade-right' data-aos-delay='2500' data-aos-duration='1000'>
                 <Button
                   href='https://www.instagram.com/m.u.h96/'
                   variant="outlined"
@@ -147,15 +156,16 @@ export default ({
             justify="space-between"
             alignItems="center"
           >
-            <Grid item xs={12}>
-                <Typography
+            <Grid item xs={12} >
+                <Typography data-aos='fade-left'
+                    data-aos-duration='1000'
                     align="center"
                     variant="subtitle1"
                 >
                     You can Send me Message:
                 </Typography>
             </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
                 <TextField
                   fullWidth
                   error={!nameValidate}
@@ -167,7 +177,7 @@ export default ({
                   value={name}
                 />
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
                 <TextField
                   fullWidth
                   error={!emailValidate}
@@ -180,7 +190,7 @@ export default ({
                   value={email}
                 />
               </Grid>
-              <Grid container item justify="center" alignItems="center">
+              <Grid container item justify="center" alignItems="center" data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
                 <TextField
                   fullWidth
                   error={!subjectValidate}
@@ -192,7 +202,7 @@ export default ({
                   value={subject}
                 />
               </Grid>
-              <Grid container item justify="center" alignItems="center">
+              <Grid container item justify="center" alignItems="center" data-aos='fade-left' data-aos-delay='1000' data-aos-duration='1000'>
                 <TextField
                   multiline
                   fullWidth
@@ -205,14 +215,13 @@ export default ({
                   onChange={handleChangeEvent}
                   value={message}
                 />
-              </Grid>
-              <Grid container item justify="center" alignItems="center">
                 <Button
                   onClick={handleSubmit}
                   type='submit'
                   size="large"
                   variant="contained"
                   color="primary"
+                  className={classes.topMargin}
                 >
                   <Typography color="initial"> {formSubmitted ? "Sending..." : "Send" } </Typography>
                 </Button>

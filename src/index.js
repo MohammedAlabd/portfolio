@@ -15,7 +15,7 @@ const theme = createMuiTheme({
         },
         secondary:
         {
-            main:lime[300],
+            main:'#ffe766',
             light:lime[100],
             dark:lime[600]
         },

@@ -21,10 +21,8 @@ const SplitTextStyled = styled.div`
   .text2 {
     position: relative;
     font-family: 'Montserrat', sans-serif;
-    // font-size: 80px;
     font-weight: bold;
     display: inline-block;
-    // font-size: 72px;
   }
   .textFamily{
     font-family: 'Montserrat', sans-serif;

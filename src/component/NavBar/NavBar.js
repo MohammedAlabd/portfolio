@@ -49,10 +49,15 @@ const useStyles = makeStyles(theme => ({
   button: {
     padding: "20px 0",
     boxShadow:'none',
-    borderRadius:0
+    borderRadius:0,
+    color:'#fff',
   },
   icon: {
     margin: "0px 0px 0px 40px"
+  },
+  link:{
+    color: "#fff",
+    textDecoration: "none"
   }
 }));
 
@@ -82,7 +87,7 @@ function ResponsiveDrawer(props) {
       >
         <Link
           to={`/home/about`}
-          style={{ color: "#fff", textDecoration: "none" }}
+          className={classes.link}
         >
           <Button
             fullWidth
@@ -99,12 +104,12 @@ function ResponsiveDrawer(props) {
               />
             }
           >
-            <Tab disableRipple component='div' label="About" value={0} />
+            <Tab disableRipple disabled component='div' style={{opacity:1}} label="About" value={0} />
           </Button>
         </Link>
         <Link
           to={`/home/Projects`}
-          style={{ color: "#fff", textDecoration: "none" }}
+          className={classes.link}
         >
           <Button
             fullWidth
@@ -120,12 +125,12 @@ function ResponsiveDrawer(props) {
               />
             }
           >
-            <Tab disableRipple component='div' label="Portfolio" value={1} />
+            <Tab disableRipple disabled component='div' style={{opacity:1}} label="Portfolio" value={1} />
           </Button>
         </Link>
         <Link
           to={`/home/contact`}
-          style={{ color: "#fff", textDecoration: "none" }}
+          className={classes.link}
         >
           <Button
             fullWidth
@@ -138,12 +143,12 @@ function ResponsiveDrawer(props) {
               <PhoneOutlined className={classes.icon} color="secondary" />
             }
           >
-            <Tab component='div' disableRipple label="Contact" value={2} />
+            <Tab component='div' disableRipple disabled style={{opacity:1}} label="Contact" value={2} />
           </Button>
         </Link>
         <Link
           to={`/home/contact`}
-          style={{ color: "#fff", textDecoration: "none" }}
+          className={classes.link}
         >
           <Button
             fullWidth
@@ -158,7 +163,7 @@ function ResponsiveDrawer(props) {
               />
             }
           >
-            <Tab component='div' disableRipple label="Resume" value={3} />
+            <Tab component='div' disableRipple disabled style={{opacity:1}} label="Resume" value={3} />
           </Button>
         </Link>
       </Tabs>

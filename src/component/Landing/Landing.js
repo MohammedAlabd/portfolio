@@ -13,12 +13,13 @@ const useStyles = makeStyles(theme => ({
   container: {
     background: "#f2f2f2",
     width: "100%",
-    overflow: "hidden"
   },
   lastSection: {
     height: "200px"
   },
   textFamily: {
+    textShadow: "-4px 12px 8px #4a4a4a33",
+    fontSize: 30,
     fontFamily: '"Montserrat", sans-serif'
   },
   marginGrid: {
@@ -35,9 +36,20 @@ const useStyles = makeStyles(theme => ({
     }
   },
   arrowDown: {
-    position: "absolute",
-    right: "10px",
-    bottom: "30px"
+    zIndex:2000,
+    position: "fixed",
+    right: "20px",
+    bottom: "30px",
+  },
+  icon:{
+    backgroundColor:'#00695c',
+    color: '#ffe766' ,
+    '&:hover':{
+        color:'#00695c'
+    }
+  },
+  decoration:{
+    textDecoration: "none"
   }
 }));
 
@@ -46,6 +58,17 @@ export default props => {
 
   return (
     <div className={classes.container}>
+        <a href="#last" className={classes.arrowDown}>
+            <IconButton
+              variant="outlined"
+              className={`${classes.icon} ${classes.arrowDown}`}
+              color="secondary"
+              aria-label="upload picture"
+              component="span"
+            >
+              <ArrowDownwardIcon fontSize="large" />
+            </IconButton>
+          </a>
       <Grid
         container
         spacing={3}
@@ -63,7 +86,6 @@ export default props => {
             className={classes.textFamily}
             fontWeight={500}
             variant="h1"
-            style={{ textShadow: "-4px 12px 8px #4a4a4a33", fontSize: 30 }}
           >
             Hi
           </Typography>
@@ -73,7 +95,6 @@ export default props => {
           <Typography
             className={classes.textFamily}
             variant="h2"
-            style={{ textShadow: "-4px 12px 8px #4a4a4a33", fontSize: 30 }}
           >
             I'm Mohammed AlAbd
           </Typography>
@@ -83,24 +104,11 @@ export default props => {
           <Typography
             className={classes.textFamily}
             variant="h3"
-            style={{ textShadow: "-4px 12px 8px #4a4a4a33", fontSize: 30 }}
           >
             Please scroll down...
           </Typography>
         </Grid>
-        <Grid item className={classes.arrowDown}>
-          <a href="#last" style={{ textDecoration: "none" }}>
-            <IconButton
-              variant="outlined"
-              className={classes.icon}
-              color="secondary"
-              aria-label="upload picture"
-              component="span"
-            >
-              <ArrowDownwardIcon fontSize="large" />
-            </IconButton>
-          </a>
-        </Grid>
+        
       </Grid>
       {Tags.map( ( tag, index ) => (
         <Tag key={index} tag={tag} />

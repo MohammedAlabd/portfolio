@@ -149,7 +149,7 @@ class App extends React.Component {
 
     return (
       <Router>
-        <Grid style={{ height: "100vh" }} container>
+        <Grid style={{ height: "100vh", overflowX:'hidden' }} container>
           <CssBaseline />
           <Route exact path="/">
             <Landing />

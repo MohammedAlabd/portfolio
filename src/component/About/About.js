@@ -16,7 +16,6 @@ const useStyles = makeStyles(theme => ({
     },
     container: {
         height: "100%",
-        overflow: "hidden" 
     },
     height:{
         height:'100%'
