@@ -50,24 +50,32 @@ export default props => {
             </div>
             <Grid container data-aos='zoom-in'  data-aos-delay='1600'   spacing={1} >
                 <Grid item xs={2}>
-                    <IconButton  variant="outlined"   color="primary" aria-label="upload picture" component="span">
-                        <GitHub fontSize='large'  />
-                    </IconButton>
+                    <a href='https://github.com/MohammedAlabd'>
+                        <IconButton variant="outlined" color="primary" component="span">
+                            <GitHub fontSize='large'  />
+                        </IconButton>
+                    </a>
                 </Grid>
                 <Grid item xs={2}>
-                    <IconButton  variant="outlined"   color="primary" aria-label="upload picture" component="span">
-                        <LinkedIn fontSize='large'  />
-                    </IconButton>
+                    <a href='https://www.linkedin.com/in/mohammed-alabd/'>
+                        <IconButton onClick={ () => window.location = 'https://www.linkedin.com/in/mohammed-alabd/'} variant="outlined" color="primary" component="span">
+                            <LinkedIn fontSize='large'  />
+                        </IconButton>
+                    </a>
                 </Grid>
                 <Grid item xs={2}>
-                    <IconButton  variant="outlined"   color="primary" aria-label="upload picture" component="span">
-                        <Facebook fontSize='large'  />
-                    </IconButton>
+                    <a href='https://www.facebook.com/assassin.first1'>
+                        <IconButton onClick={ () => window.location = 'https://www.facebook.com/assassin.first1'} variant="outlined" color="primary" component="span">
+                            <Facebook fontSize='large'  />
+                        </IconButton>
+                    </a>
                 </Grid>
                 <Grid item xs={2}>
-                    <IconButton  variant="outlined"   color="primary" aria-label="upload picture" component="span">
-                        <Instagram fontSize='large'  />
-                    </IconButton>
+                    <a href='https://www.instagram.com/m.u.h96/'>
+                        <IconButton onClick={ () => window.location = 'https://www.instagram.com/m.u.h96/'} variant="outlined"   color="primary" aria-label="upload picture" component="span">
+                            <Instagram fontSize='large'  />
+                        </IconButton>
+                    </a>
                 </Grid>
             </Grid>
           </Grid>
