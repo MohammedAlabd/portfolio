@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
   },
   textFamily: {
     fontFamily: '"Montserrat", sans-serif'
-    // margin:15,
   },
   marginGrid: {
     marginLeft: 30
@@ -52,7 +51,6 @@ export default props => {
         spacing={3}
         direction="column"
         justify="flex-start"
-        // alignItems="space-around"
         className={classes.section}
         style={{
           backgroundImage: `url('${img}')`,

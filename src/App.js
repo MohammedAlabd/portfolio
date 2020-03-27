@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Landing from "./component/Landing/Landing";
 import Projects from "./component/Projects/Projects";
 import NavBar from "./component/NavBar/NavBar";
@@ -23,7 +22,6 @@ class App extends React.Component {
       subjectValidate: true,
       messageValidate: true,
       formSubmitted: false,
-      formEmailSent: false,
       modalMessage: "",
       modalTitle: "",
       modalState:false
@@ -39,11 +37,11 @@ class App extends React.Component {
       this.setState({ selectedTab: 2 });
   }
 
-  handleClose = () => {
+  handleModalClose = () => {
     this.setState({modalState:false})
   };
 
-  handleChange = index => {
+  handleTabChange = index => {
     this.setState({
       selectedTab: index
     });
@@ -57,9 +55,7 @@ class App extends React.Component {
     });
   };
 
-  openStateModal = (modalTitle, modalMessage) => {
-    console.log('fromopen');
-    
+  openStateModal = (modalTitle, modalMessage) => {    
     this.setState({
       modalMessage,
       modalTitle,
@@ -68,7 +64,7 @@ class App extends React.Component {
 
   }
 
-  checkValidation = () => {
+  isValidDate = () => {
     const { name, email, subject, message} = this.state
     if (!name) {
       this.openStateModal('Input Mistake', 'Please enter your name')
@@ -91,35 +87,48 @@ class App extends React.Component {
 
   }
 
+  formReset = () => {
+    this.setState({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      nameValidate: true,
+      emailValidate: true,
+      subjectValidate: true,
+      messageValidate: true,
+      formSubmitted: false,
+    })
+  }
+
+  sendEmail = ()  => {
+    const templateId = "template_0oB538o9";
+  
+        const templateParams = {
+          "name": this.state.name,
+          "subject": this.state.subject,
+          "senderEmail": this.state.email,
+          "message": this.state.message
+       }
+  
+       window.emailjs.send('default_service', templateId, templateParams)
+        .then(res => {
+          this.openStateModal('sent success', 'thank you for your message')
+          this.formReset()
+        })
+        .catch(err => this.openStateModal('Failed to send your email. Error: ', err))
+  } 
+  
+
   handleSubmit = event => {
     event.preventDefault();
-    if(this.checkValidation()) {
-      
-      // const templateId = "template_0oB538o9";
-  
-      //   const templateParams = {
-      //     "name": this.state.name,
-      //     "subject": this.state.subject,
-      //     "senderEmail": this.state.email,
-      //     "message": this.state.message
-      //  }
-  
-      //  window.emailjs.send(
-      //   'default_service', // default email provider in your EmailJS account
-      //   templateId,
-      //   templateParams,
-      //  ).then(res => {
-      //    this.openStateModal('sent success', 'thank you for your message')
-      //   this.setState({ formEmailSent: true })
-      // })
-      // // Handle errors here however you like, or use a React error boundary
-      // .catch(err => this.openStateModal('Failed to send your email. Error: ', err))
-  
+    if(this.isValidDate()) {
       this.setState({
         formSubmitted: true
-      });
+      })
+      this.sendEmail()
     }
-  };
+  }
 
   render() {
     const {
@@ -148,7 +157,7 @@ class App extends React.Component {
           <Grid item xs md={2}>
             <Route path="/home">
               <NavBar
-                handleChange={this.handleChange}
+                handleTabChange={this.handleTabChange}
                 selectedTab={this.state.selectedTab}
               />
             </Route>
@@ -175,7 +184,7 @@ class App extends React.Component {
                 modalMessage={modalMessage}
                 modalTitle={modalTitle}
                 modalState={modalState}
-                handleClose={this.handleClose}
+                handleModalClose={this.handleModalClose}
                 handleInputChange={this.handleInputChange}
                 handleSubmit={this.handleSubmit}
               />

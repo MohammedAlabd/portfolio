@@ -20,6 +20,9 @@ const useStyles = makeStyles(theme => ({
     },
     height:{
         height:'100%'
+    },
+    leftMargin:{
+        marginLeft:12
     }
   
   }));
@@ -39,7 +42,7 @@ export default props => {
           alignItems="center"
         >
           <Grid item xs={12} md={6}>
-            <div data-aos="fade-right" data-aos-duration="1500">
+            <div className={classes.leftMargin} data-aos="fade-right" data-aos-duration="1500">
               <Typography className={classes.firstTypography} variant="h5">Welcome to my site, I am ...</Typography>
               <Typography color="primary" variant="h2">
                 Mohammed Abdulbary

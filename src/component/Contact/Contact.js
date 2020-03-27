@@ -53,7 +53,8 @@ export default ({
     modalMessage,
     modalTitle,
     modalState,
-    handleClose
+    handleModalClose,
+    formSubmitted
 }) => {
   const classes = useStyles();
 
@@ -65,7 +66,7 @@ export default ({
       <Grid container spacing={2}>
         <Grid container justify="center" alignItems="center">
           <Grid item xs={12}>
-            <StateModal modalMessage={modalMessage} modalTitle={modalTitle} handleClose={handleClose} modalState={modalState} />
+            <StateModal modalMessage={modalMessage} modalTitle={modalTitle} handleModalClose={handleModalClose} modalState={modalState} />
             <Typography
               className={classes.firstTypography}
               align="center"
@@ -154,7 +155,6 @@ export default ({
                     You can Send me Message:
                 </Typography>
             </Grid>
-            {/* <form onSubmit={handleSubmit} > */}
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -214,7 +214,7 @@ export default ({
                   variant="contained"
                   color="primary"
                 >
-                  <Typography color="initial"> Send </Typography>
+                  <Typography color="initial"> {formSubmitted ? "Sending..." : "Send" } </Typography>
                 </Button>
               </Grid>
           </Grid>

@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import { Modal, Button, Typography } from '@material-ui/core';
-import Backdrop from '@material-ui/core/Backdrop';
-import { useSpring, animated } from 'react-spring/web.cjs'; // web.cjs is required for IE 11 support
+import { Backdrop, Modal, Button, Typography } from '@material-ui/core';
+import { useSpring, animated } from 'react-spring/web.cjs'; 
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -13,7 +12,8 @@ const useStyles = makeStyles(theme => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: '8px solid #00695c',
+    borderRadius:24,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
@@ -50,7 +50,7 @@ Fade.propTypes = {
   onExited: PropTypes.func,
 };
 
-export default function SpringModal({modalTitle, modalMessage, modalState, handleClose}) {
+export default function SpringModal({modalTitle, modalMessage, modalState, handleModalClose}) {
   const classes = useStyles();
   console.log(modalMessage, modalTitle);
   
@@ -62,7 +62,7 @@ export default function SpringModal({modalTitle, modalMessage, modalState, handl
         aria-describedby="modal-description"
         className={classes.modal}
         open={modalState}
-        onClose={handleClose}
+        onClose={handleModalClose}
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
@@ -74,9 +74,8 @@ export default function SpringModal({modalTitle, modalMessage, modalState, handl
             <h2 id="modal-title"> {modalTitle} </h2>
             <p id="modal-description"> {modalMessage} </p>
             <Button
-                  onClick={handleClose}
+                  onClick={handleModalClose}
                   type='submit'
-                //   size="large"
                   variant="outlined"
                   color="primary"
                 >

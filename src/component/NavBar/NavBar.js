@@ -1,20 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@material-ui/core/AppBar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import { AppBar, CssBaseline, Drawer, Hidden, IconButton, Toolbar, Typography, Tabs, Tab, Button} from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Tabs, Tab } from "@material-ui/core";
-import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
-import InsertDriveFileOutlinedIcon from "@material-ui/icons/InsertDriveFileOutlined";
-import AccountTreeRoundedIcon from "@material-ui/icons/AccountTreeRounded";
-import Button from "@material-ui/core/Button";
-import PhoneOutlinedIcon from "@material-ui/icons/PhoneOutlined";
+import { Menu, AccountCircleRounded, InsertDriveFileOutlined, AccountTreeRounded, PhoneOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 180;
@@ -48,7 +35,6 @@ const useStyles = makeStyles(theme => ({
       display: "none"
     }
   },
-  // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     backgroundColor: "#00695c",
@@ -61,7 +47,9 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(3)
   },
   button: {
-    padding: "20px 0"
+    padding: "20px 0",
+    boxShadow:'none',
+    borderRadius:0
   },
   icon: {
     margin: "0px 0px 0px 40px"
@@ -69,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ResponsiveDrawer(props) {
-  const { container, handleChange, selectedTab } = props;
+  const { container, handleTabChange, selectedTab } = props;
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -79,9 +67,8 @@ function ResponsiveDrawer(props) {
   };
 
   const handleChangeEvent = (index) => (e) => {
-    // console.log(index);
     
-    handleChange(index)
+    handleTabChange(index)
   }
   
   const drawer = (
@@ -106,7 +93,7 @@ function ResponsiveDrawer(props) {
             onClick={handleChangeEvent(0)}
             className={classes.button}
             startIcon={
-              <AccountCircleRoundedIcon
+              <AccountCircleRounded
                 className={classes.icon}
                 color="secondary"
               />
@@ -127,7 +114,7 @@ function ResponsiveDrawer(props) {
             onClick={handleChangeEvent(1)}
             className={classes.button}
             startIcon={
-              <AccountTreeRoundedIcon
+              <AccountTreeRounded
                 className={classes.icon}
                 color="secondary"
               />
@@ -148,7 +135,7 @@ function ResponsiveDrawer(props) {
             onClick={handleChangeEvent(2)}
             className={classes.button}
             startIcon={
-              <PhoneOutlinedIcon className={classes.icon} color="secondary" />
+              <PhoneOutlined className={classes.icon} color="secondary" />
             }
           >
             <Tab component='div' disableRipple label="Contact" value={2} />
@@ -165,7 +152,7 @@ function ResponsiveDrawer(props) {
             size="large"
             className={classes.button}
             startIcon={
-              <InsertDriveFileOutlinedIcon
+              <InsertDriveFileOutlined
                 className={classes.icon}
                 color="secondary"
               />
@@ -190,7 +177,7 @@ function ResponsiveDrawer(props) {
             onClick={handleDrawerToggle}
             className={classes.menuButton}
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <Typography variant="h6" noWrap>
             Muhammad Al-Abd
@@ -198,7 +185,6 @@ function ResponsiveDrawer(props) {
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer
             color="primary"
@@ -211,7 +197,7 @@ function ResponsiveDrawer(props) {
               paper: classes.drawerPaper
             }}
             ModalProps={{
-              keepMounted: true // Better open performance on mobile.
+              keepMounted: true 
             }}
           >
             {drawer}
@@ -233,12 +219,5 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  container: PropTypes.any
-};
 
 export default ResponsiveDrawer;

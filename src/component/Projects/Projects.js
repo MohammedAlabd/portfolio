@@ -9,12 +9,15 @@ import {
   CardContent,
   Button
 } from "@material-ui/core";
+
 import { makeStyles } from '@material-ui/core/styles';
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import gsuImg from '../../img/afis-1.png'
 import mentorsImg from '../../img/mentorship.png'
 import minesImg from '../../img/mines-weeper.png'
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const useStyles = makeStyles(theme => ({
     firstTypography:{
@@ -81,8 +84,7 @@ export default function Projects() {
         variant="h2"
         align="center"
       >
-        {" "}
-        My Works{" "}
+        My Works
       </Typography>
       <Grid item>
         <Card
