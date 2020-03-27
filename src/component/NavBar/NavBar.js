@@ -150,11 +150,14 @@ function ResponsiveDrawer(props) {
           </Button>
         </Link>
         <Link
-          to={`/home/contact`}
+          target='_blank'
+          to={`https://drive.google.com/open?id=1URXY_v14za8qsBuB8ZGmFS89h1LBEFlW`}
           className={classes.link}
         >
           <Button
             fullWidth
+            target='_blank'
+            href={`https://drive.google.com/open?id=1URXY_v14za8qsBuB8ZGmFS89h1LBEFlW`}
             variant="contained"
             color="primary"
             size="large"

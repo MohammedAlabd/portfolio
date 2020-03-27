@@ -23,7 +23,6 @@ const useStyles = makeStyles(theme => ({
     leftMargin:{
         marginLeft:12
     }
-  
   }));
 
 export default props => {

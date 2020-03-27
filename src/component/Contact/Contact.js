@@ -98,7 +98,7 @@ export default ({
                   You can reach me on:
                 </Typography>
               </Grid>
-              <Grid item data-aos='fade-right' data-aos-delay='1000' data-aos-duration='1000' >
+              <Grid item data-aos='fade-right' data-aos-delay='800' data-aos-duration='1000' >
                 <Button
                   href='https://github.com/MohammedAlabd'
                   variant="outlined"
@@ -110,7 +110,7 @@ export default ({
                   GitHub
                 </Button>
               </Grid>
-              <Grid item data-aos='fade-right' data-aos-delay='1500' data-aos-duration='1000'>
+              <Grid item data-aos='fade-right' data-aos-delay='1100' data-aos-duration='1000'>
                 <Button
                   href='https://www.linkedin.com/in/mohammed-alabd/'
                   variant="outlined"
@@ -122,7 +122,7 @@ export default ({
                   Linked In
                 </Button>
               </Grid>
-              <Grid item data-aos='fade-right' data-aos-delay='2000' data-aos-duration='1000' >
+              <Grid item data-aos='fade-right' data-aos-delay='1400' data-aos-duration='1000' >
                 <Button
                   href='https://www.facebook.com/assassin.first1'
                   variant="outlined"
@@ -134,7 +134,7 @@ export default ({
                   Facebook
                 </Button>
               </Grid>
-              <Grid item data-aos='fade-right' data-aos-delay='2500' data-aos-duration='1000'>
+              <Grid item data-aos='fade-right' data-aos-delay='1700' data-aos-duration='1000'>
                 <Button
                   href='https://www.instagram.com/m.u.h96/'
                   variant="outlined"
