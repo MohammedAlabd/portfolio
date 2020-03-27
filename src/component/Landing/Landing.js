@@ -8,7 +8,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   section: {
-    height: "100vh"
+    height: "100vh",
+    maxWidth:'100%',
+    backgroundImage: `url('${img}')`,
+    backgroundSize: "cover",
+    backgroundPosition: "top"
   },
   container: {
     background: "#f2f2f2",
@@ -37,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
   arrowDown: {
     zIndex:2000,
-    position: "fixed",
+    position: "absolute",
     right: "20px",
     bottom: "30px",
   },
@@ -75,11 +79,7 @@ export default props => {
         direction="column"
         justify="flex-start"
         className={classes.section}
-        style={{
-          backgroundImage: `url('${img}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "top"
-        }}
+        
       >
         <Grid item  className={classes.marginFirstGrid}>
           <Typography

@@ -149,46 +149,48 @@ class App extends React.Component {
 
     return (
       <Router>
-        <Grid style={{ height: "100vh", overflowX:'hidden' }} container>
+        <Grid style={{ height: "100vh" }} container>
           <CssBaseline />
           <Route exact path="/">
             <Landing />
           </Route>
-          <Grid item xs md={2}>
-            <Route path="/home">
-              <NavBar
-                handleTabChange={this.handleTabChange}
-                selectedTab={this.state.selectedTab}
-              />
-            </Route>
-          </Grid>
-          <Grid item xs={12} md={10}>
-            <Route exact path="/home/about">
-              <About />
-            </Route>
-            <Route exact path="/home/Projects">
-              <Projects />
-            </Route>
-            <Route exact path="/home/contact">
-              <Contact
-                name={name}
-                email={email}
-                subject={subject}
-                message={message}
-                nameValidate={nameValidate}
-                emailValidate={emailValidate}
-                subjectValidate={subjectValidate}
-                messageValidate={messageValidate}
-                formEmailSent={formEmailSent}
-                formSubmitted={formSubmitted}
-                modalMessage={modalMessage}
-                modalTitle={modalTitle}
-                modalState={modalState}
-                handleModalClose={this.handleModalClose}
-                handleInputChange={this.handleInputChange}
-                handleSubmit={this.handleSubmit}
-              />
-            </Route>
+          <Grid container style={{overflowX:'hidden'}}>
+            <Grid item xs md={2}>
+              <Route path="/home">
+                <NavBar
+                  handleTabChange={this.handleTabChange}
+                  selectedTab={this.state.selectedTab}
+                />
+              </Route>
+            </Grid>
+            <Grid item xs={12} md={10}>
+              <Route exact path="/home/about">
+                <About />
+              </Route>
+              <Route exact path="/home/Projects">
+                <Projects />
+              </Route>
+              <Route exact path="/home/contact">
+                <Contact
+                  name={name}
+                  email={email}
+                  subject={subject}
+                  message={message}
+                  nameValidate={nameValidate}
+                  emailValidate={emailValidate}
+                  subjectValidate={subjectValidate}
+                  messageValidate={messageValidate}
+                  formEmailSent={formEmailSent}
+                  formSubmitted={formSubmitted}
+                  modalMessage={modalMessage}
+                  modalTitle={modalTitle}
+                  modalState={modalState}
+                  handleModalClose={this.handleModalClose}
+                  handleInputChange={this.handleInputChange}
+                  handleSubmit={this.handleSubmit}
+                />
+              </Route>
+            </Grid>
           </Grid>
         </Grid>
       </Router>
