@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/portfolio/static/js/main.c6cfc727.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.c6cfc727.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.130d373a.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.130d373a.js.map",
-    "static/css/2.eb43dee1.chunk.css": "/portfolio/static/css/2.eb43dee1.chunk.css",
-    "static/js/2.178c8789.chunk.js": "/portfolio/static/js/2.178c8789.chunk.js",
-    "static/js/2.178c8789.chunk.js.map": "/portfolio/static/js/2.178c8789.chunk.js.map",
-    "index.html": "/portfolio/index.html",
-    "precache-manifest.37f213f08b23fc5a5ed3322572dc5dc8.js": "/portfolio/precache-manifest.37f213f08b23fc5a5ed3322572dc5dc8.js",
-    "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/2.eb43dee1.chunk.css.map": "/portfolio/static/css/2.eb43dee1.chunk.css.map",
-    "static/css/main.5ecd60fb.chunk.css.map": "/portfolio/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.178c8789.chunk.js.LICENSE.txt": "/portfolio/static/js/2.178c8789.chunk.js.LICENSE.txt",
-    "static/media/Mohammed-Abdul-Barry.png": "/portfolio/static/media/Mohammed-Abdul-Barry.e6892988.png",
-    "static/media/afis-1.png": "/portfolio/static/media/afis-1.974cc3d9.png",
-    "static/media/bg.jpg": "/portfolio/static/media/bg.93806f7c.jpg",
-    "static/media/mentorship.png": "/portfolio/static/media/mentorship.b46a8094.png",
-    "static/media/mines-weeper.png": "/portfolio/static/media/mines-weeper.b88ed19f.png"
+    "main.css": "/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/static/js/main.e24b6288.chunk.js",
+    "main.js.map": "/static/js/main.e24b6288.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.31ac2ef0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.31ac2ef0.js.map",
+    "static/css/2.eb43dee1.chunk.css": "/static/css/2.eb43dee1.chunk.css",
+    "static/js/2.c8c517aa.chunk.js": "/static/js/2.c8c517aa.chunk.js",
+    "static/js/2.c8c517aa.chunk.js.map": "/static/js/2.c8c517aa.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d855032d99825f0d3553b80014b7900d.js": "/precache-manifest.d855032d99825f0d3553b80014b7900d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.eb43dee1.chunk.css.map": "/static/css/2.eb43dee1.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.c8c517aa.chunk.js.LICENSE.txt": "/static/js/2.c8c517aa.chunk.js.LICENSE.txt",
+    "static/media/Mohammed-Abdul-Barry.png": "/static/media/Mohammed-Abdul-Barry.e6892988.png",
+    "static/media/afis-1.png": "/static/media/afis-1.974cc3d9.png",
+    "static/media/bg.jpg": "/static/media/bg.93806f7c.jpg",
+    "static/media/mentorship.png": "/static/media/mentorship.b46a8094.png",
+    "static/media/mines-weeper.png": "/static/media/mines-weeper.b88ed19f.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.130d373a.js",
+    "static/js/runtime-main.31ac2ef0.js",
     "static/css/2.eb43dee1.chunk.css",
-    "static/js/2.178c8789.chunk.js",
+    "static/js/2.c8c517aa.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.c6cfc727.chunk.js"
+    "static/js/main.e24b6288.chunk.js"
   ]
 }
