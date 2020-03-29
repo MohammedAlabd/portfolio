@@ -151,12 +151,12 @@ class App extends React.Component {
       <Router>
         <Grid style={{ height: "100vh" }} container>
           <CssBaseline />
-          <Route exact path="/">
+          <Route exact path="/portfolio">
             <Landing />
           </Route>
           <Grid container style={{overflowX:'hidden'}}>
             <Grid item xs md={2}>
-              <Route path="/home">
+              <Route path="/portfolio/pages">
                 <NavBar
                   handleTabChange={this.handleTabChange}
                   selectedTab={this.state.selectedTab}
@@ -164,13 +164,13 @@ class App extends React.Component {
               </Route>
             </Grid>
             <Grid item xs={12} md={10}>
-              <Route exact path="/home/about">
+              <Route exact path="/portfolio/pages/about">
                 <About />
               </Route>
-              <Route exact path="/home/Projects">
+              <Route exact path="/portfolio/pages/Projects">
                 <Projects />
               </Route>
-              <Route exact path="/home/contact">
+              <Route exact path="/portfolio/pages/contact">
                 <Contact
                   name={name}
                   email={email}

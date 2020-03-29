@@ -64,7 +64,7 @@ export default ({tag:{name,direction}, lastTag}) => {
                 {lastTag 
                 ? 
                 <SplitWords >
-                      <Link to={`/home/about`} className='link'>
+                      <Link to={`/portfolio/pages/about`} className='link'>
                         <Button id='last' color='primary' className='Button' variant="outlined" size="large"  >
                           <Typography  variant='h5'className="text">
                             {name}

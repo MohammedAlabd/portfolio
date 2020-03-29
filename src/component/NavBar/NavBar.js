@@ -89,7 +89,7 @@ function ResponsiveDrawer(props) {
         centered
       >
         <Link
-          to={`/home/about`}
+          to={`/portfolio/pages/about`}
           className={classes.link}
         >
           <Button
@@ -111,7 +111,7 @@ function ResponsiveDrawer(props) {
           </Button>
         </Link>
         <Link
-          to={`/home/Projects`}
+          to={`/portfolio/pages/Projects`}
           className={classes.link}
         >
           <Button
@@ -132,7 +132,7 @@ function ResponsiveDrawer(props) {
           </Button>
         </Link>
         <Link
-          to={`/home/contact`}
+          to={`/portfolio/pages/contact`}
           className={classes.link}
         >
           <Button
