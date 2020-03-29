@@ -259,7 +259,7 @@ export default function Projects() {
                 </Button>
                 <Button
                   size="small" variant="outlined"
-                  href="/"
+                  href="/portfolio"
                   color="primary"
                 >
                   <p className={classes.buttonText} > Visit Link </p>
