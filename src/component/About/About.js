@@ -86,19 +86,17 @@ export default props => {
               data-aos-delay="800"
               data-aos-duration="800"
             >
-              I was learning C and C++ language at first but then started to
-              learn about front-End and after that i joined Re:coded Front-End
-              Bootcamp with the hope to be a junior Developer When I was kid, My
+              When I was kid...., My
               dream was to learn how to type fast and I was really curios about
-              how the apps runs in my compute... Unfortunately My road was far
-              away from the codding and I joined a Environmental engineering
+              how the apps run in my compute... Unfortunately My road was far
+              away from the codding and I joined Environmental engineering
               college and I passed the first tow years there, after that I
               realized that I don't want to be there, thats not me. so I started
               to learn codding by my own using youtube and I learnt C & C++
               languages and after that I met with an Iraqi software engineer
               working at facebook and his brother and they led me to inter the
               Front-End web development and then I joined Re:Coded Front-End
-              Bootcamp
+              Bootcamp to be a developer and try to change the world into a better Place.
             </Typography>
           </Grid>
         </Grid>
