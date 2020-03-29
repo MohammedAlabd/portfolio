@@ -157,7 +157,7 @@ function ResponsiveDrawer(props) {
           <Button
             fullWidth
             target='_blank'
-            href={`https://drive.google.com/open?id=1URXY_v14za8qsBuB8ZGmFS89h1LBEFlW`}
+            href={`https://drive.google.com/file/d/1Tbv7jyxkaUIJdSzoTw1tWTbMkx9mwF90/view?usp=sharing`}
             variant="contained"
             color="primary"
             size="large"

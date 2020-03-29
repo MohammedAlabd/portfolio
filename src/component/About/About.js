@@ -49,29 +49,29 @@ export default props => {
                   a Junior Front-End Developer
               </Typography>
             </div>
-            <Grid container data-aos='zoom-in'  data-aos-delay='1600'   spacing={1} >
-                <Grid item xs={2}>
+            <Grid container spacing={1} >
+                <Grid data-aos='zoom-in-up'  data-aos-delay='1600' item xs={2}>
                     <a href='https://github.com/MohammedAlabd'>
                         <IconButton variant="outlined" color="primary" component="span">
                             <GitHub fontSize='large'  />
                         </IconButton>
                     </a>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid data-aos='zoom-in-up'  data-aos-delay='1800' item xs={2}>
                     <a href='https://www.linkedin.com/in/mohammed-alabd/'>
                         <IconButton onClick={ () => window.location = 'https://www.linkedin.com/in/mohammed-alabd/'} variant="outlined" color="primary" component="span">
                             <LinkedIn fontSize='large'  />
                         </IconButton>
                     </a>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid data-aos='zoom-in-up'  data-aos-delay='2000' item xs={2}>
                     <a href='https://www.facebook.com/assassin.first1'>
                         <IconButton onClick={ () => window.location = 'https://www.facebook.com/assassin.first1'} variant="outlined" color="primary" component="span">
                             <Facebook fontSize='large'  />
                         </IconButton>
                     </a>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid data-aos='zoom-in-up'  data-aos-delay='2200' item xs={2}>
                     <a href='https://www.instagram.com/m.u.h96/'>
                         <IconButton onClick={ () => window.location = 'https://www.instagram.com/m.u.h96/'} variant="outlined"   color="primary" aria-label="upload picture" component="span">
                             <Instagram fontSize='large'  />

@@ -13,6 +13,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 
 import gsuImg from '../../img/afis-1.png'
+import portfolio from '../../img/Mohammed-Abdul-Barry.png'
 import mentorsImg from '../../img/mentorship.png'
 import minesImg from '../../img/mines-weeper.png'
 
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     card:{
-        margin: 50, 
+        margin: '10px 20px', 
         maxWidth: 600
     },
     minesWeeperImg:{
@@ -46,6 +47,11 @@ const useStyles = makeStyles(theme => ({
         height: 200,
         backgroundPosition: "top",
     },
+    portfolio:{
+      backgroundImage: `url('${portfolio}')`,
+      height: 200,
+      backgroundPosition: "right",
+  },
     cardActionArea:{
         maxWidth: 600
     },
@@ -90,6 +96,7 @@ export default function Projects() {
         <Card
           data-aos="fade-right"
           data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
           className={classes.card}
         >
           <Grid container>
@@ -139,6 +146,7 @@ export default function Projects() {
         <Card
           data-aos="fade-left"
           data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
           className={classes.card}
         >
           <Grid container className={classes.flexDirectionResponsive}>
@@ -186,6 +194,7 @@ export default function Projects() {
         <Card
           data-aos="fade-right"
           data-aos-duration="800"
+          data-aos-anchor-placement="top-bottom"
           className={classes.card}        >
           <Grid container>
             <Grid item xs={12} sm={6}>
@@ -215,10 +224,57 @@ export default function Projects() {
                 >
                   <p className={classes.buttonText} > GitHub Page </p>
                 </Button>
-                <Button size="small" variant="outlined" color="primary">
+                <Button size="small" href='https://mohammedalabd.github.io/gsu-sfk/' variant="outlined" color="primary">
                 <p className={classes.buttonText} > Visit Link </p>
                 </Button>
               </CardActions>
+            </Grid>
+          </Grid>
+        </Card>
+      </Grid>
+      <Grid item className={classes.alignSelfEnd}>
+        <Card
+          data-aos="fade-right"
+          data-aos-duration="800"          
+          data-aos-anchor-placement="top-bottom"
+          className={classes.card}
+        >
+          <Grid container className={classes.flexDirectionResponsive}>
+            <Grid item xs={12} sm={6}>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Online Portfolio
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  A web site to share my works with other made with React.js and Material-UI
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  size="small" variant="outlined"
+                  href='https://github.com/MohammedAlabd/portfolio'
+                  color="primary"
+                >
+                  <p className={classes.buttonText} > GitHub Page </p>
+                </Button>
+                <Button
+                  size="small" variant="outlined"
+                  href="/"
+                  color="primary"
+                >
+                  <p className={classes.buttonText} > Visit Link </p>
+                  
+                </Button>
+              </CardActions>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <CardActionArea disabled className={classes.cardActionArea}>
+                <CardMedia
+                  height="140"
+                  className={classes.portfolio}
+                  title="Mentors Webpage"
+                />
+              </CardActionArea>
             </Grid>
           </Grid>
         </Card>
