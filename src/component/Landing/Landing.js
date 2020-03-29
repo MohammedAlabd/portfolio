@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   lastText: {
     marginLeft: 30,
-    marginTop: 350,
+    marginTop: 380,
     [theme.breakpoints.up("sm")]: {
       marginTop: 150
     }
@@ -54,6 +54,9 @@ const useStyles = makeStyles(theme => ({
   },
   decoration:{
     textDecoration: "none"
+  },
+  marginTop:{
+    marginTop:40
   }
 }));
 
@@ -75,7 +78,6 @@ export default props => {
           </a>
       <Grid
         container
-        spacing={3}
         direction="column"
         justify="flex-start"
         className={classes.section}
@@ -93,7 +95,7 @@ export default props => {
 
         <Grid item className={classes.marginGrid}>
           <Typography
-            className={classes.textFamily}
+            className={`${classes.textFamily} ${classes.marginTop}`}
             variant="h2"
           >
             I'm Mohammed AlAbd
